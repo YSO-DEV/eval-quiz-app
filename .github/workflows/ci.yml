@@ -38,7 +38,7 @@ jobs:
         run: docker compose build --pull
 
       - name: Scan frontend image with Trivy
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: eval-quiz-app-frontend:latest
           format: table
@@ -47,7 +47,7 @@ jobs:
           exit-code: "1"
 
       - name: Scan backend image with Trivy
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: eval-quiz-app-backend:latest
           format: table
@@ -56,7 +56,7 @@ jobs:
           exit-code: "1"
 
       - name: Scan database image with Trivy
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           image-ref: eval-quiz-app-db:latest
           format: table
